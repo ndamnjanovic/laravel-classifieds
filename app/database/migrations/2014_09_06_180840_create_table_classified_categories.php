@@ -15,7 +15,9 @@ class CreateTableClassifiedCategories extends Migration {
 		Schema::create('classified_categories', function($table){
       $table->increments('id');
       $table->text('title');
+      $table->text('description');
       $table->text('slug');
+      $table->text('class');
       $table->timestamps();
     });
 	}

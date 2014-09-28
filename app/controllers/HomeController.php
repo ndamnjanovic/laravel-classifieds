@@ -13,7 +13,8 @@ class HomeController extends BaseController {
   }
 
   public function index(){
-    $this->layout->content = View::make('index');
+    $categories = ClassifiedCategory::all();
+    $this->layout->content = View::make('index', array('categories' => $categories));
   }
 
   public function showContactForm(){

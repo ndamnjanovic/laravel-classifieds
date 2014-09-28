@@ -15,6 +15,6 @@ Route::get('/', 'HomeController@index');
 Route::get('/oglasi-sabac/kontakt', 'HomeController@showContactForm');
 Route::post('/oglasi-sabac/posalji-komentar', 'HomeController@sendComment');
 Route::get('/oglasi-sabac-kat/{categorySlug}', 'ClassifiedsController@getByCategory');
-Route::get('/oglasi-sabac/{id}', 'ClassifiedsController@show');
 Route::get('/oglasi-sabac/objavi', 'ClassifiedsController@create');
+Route::get('/oglasi-sabac/{id}', 'ClassifiedsController@show');
 Route::post('/oglasi-sabac/', 'ClassifiedsController@store');

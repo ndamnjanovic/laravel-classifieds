@@ -43,34 +43,29 @@ class ClassifiedsController extends BaseController {
   public function store() {
     $inputData = Input::only('title', 'description', 'phone', 'category', 'contact_person', 'contact_phone', 'classified_category_id');
 
-     var_dump(Input::file());
-    die();
-
-
     try{
       $classified = Classified::create($inputData);
       if (Input::hasFile('photo')) {
-        $file = Input::file('photo');
-        $destinationPath = 'uploads/' . $classified->id;
-        // If the uploads fail due to file system, you can try doing public_path().'/uploads' 
-        $filename = str_random(12);
-        //$filename = $file->getClientOriginalName();
-        //$extension =$file->getClientOriginalExtension(); 
-        $upload_success = Input::file('file')->move($destinationPath, $filename);
+        $photos = Input::only('photo');
+        foreach ($photos as $index=>$photo) {
+          $destinationPath = public_path() . 'uploads/' . $classified->id;
+          $filename = $classified->title . '-' . $index . $photo->getClientOriginalExtension();
+          $upload_success = $photo->move($destinationPath, $filename);
 
-        if(!$upload_success){
-          Log::error('Something went wrong while saving classified images. ' . $ex);
-          Session::flash('error', 'Dogodila se greška prilikom pokušaja da se sačuvaju slike. Molimo Vas da probate ponovo. Ukoliko problem i dalje postoji, molimo Vas da nas kontaktirate. Hvala na razumevanju.');
-          return Redirect::to('/oglasi-sabac/objavi')->withInput();
+          if(!$upload_success){
+            Log::error('Something went wrong while saving classified images. ' . $ex);
+            Session::flash('error', 'Dogodila se greška prilikom pokušaja da se sačuvaju slike. Molimo Vas da probate ponovo. Ukoliko problem i dalje postoji, molimo Vas da nas kontaktirate. Hvala na razumevanju.');
+            return Redirect::to('/oglasi-sabac/objavi')->withInput();
+          }
         }
       }
-
 
       return Redirect::to('/')->with('message', 'Vaš oglas je uspešno dodat. Administratori sajta će ga proveriti u najkraćem roku.');
     } catch (Exception $ex) {
       Log::error('Something went wrong while saving classified. ' . $ex);
-      Session::flash('error', 'Dogodila se greška prilikom pokušaja da se oglas sačuva. Molimo Vas da probate ponovo. Ukoliko problem i dalje postoji, molimo Vas da nas kontaktirate. Hvala na razumevanju.');
-      return Redirect::to('/oglasi-sabac/objavi')->withInput();
+      return Redirect::to('/oglasi-sabac/objavi')
+                      ->withInput()
+                      ->with('error', 'Dogodila se greška prilikom pokušaja da se oglas sačuva. Molimo Vas da probate ponovo. Ukoliko problem i dalje postoji, molimo Vas da nas kontaktirate. Hvala na razumevanju.');
     }
   }
 }

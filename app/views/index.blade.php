@@ -37,115 +37,23 @@
         </div>
 
         <div class="row directory">
-            <div class="col-xs-12">
-              <div class="directory-block col-sm-4 col-xs-6">
-                <div class="row">
-                  <div class="col-sm-3">
-                    <i class="fa fa-home"></i>
-                  </div>
-                  <div class="col-sm-9">
-                    <h4><a href="/oglasi-sabac-kat/nekretnine"> Nekretnine</h4>
-                    <p><a href="listings.html" >Cars</a>, <a href="listings.html" >Car Parts</a>, <a href="listings.html" >Campervans</a>, <a href="listings.html">Motobikes</a>, <a href="listings.html" >Scooters</a>, <a href="listings.html" >Vans</a>, <a href="listings.html" >Trucks</a></p>
-                  </div>
+          <div class="col-xs-12">
+        @foreach($categories as $category)
+            <div class="directory-block col-sm-4 col-xs-6">
+              <div class="row">
+                <div class="col-sm-3">
+                  <i class="fa {{$category->class}}"></i>
+                </div>
+                <div class="col-sm-9">
+                  <h4><a href="/oglasi-sabac-kat/nekretnine"><strong>{{$category->title}}</strong></a></h4>
+                  <p>{{$category->description}}</p>
                 </div>
               </div>
-
-              <div class="directory-block col-sm-4 col-xs-6">
-                  <div class="row">
-                      <div class="col-sm-3">
-                          <i class="fa fa-truck"></i>
-                      </div>
-                      <div class="col-sm-9">
-                          <h4>Vozila</h4>
-                          <p><a href="listings.html" >Cars</a>, <a href="listings.html" >Car Parts</a>, <a href="listings.html" >Campervans</a>, <a href="listings.html">Motobikes</a>, <a href="listings.html" >Scooters</a>, <a href="listings.html" >Vans</a>, <a href="listings.html" >Trucks</a></p>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="directory-block col-sm-4 col-xs-6">
-                  <div class="row">
-                      <div class="col-sm-3">
-                          <i class="fa fa-shopping-cart"></i>
-                      </div>
-                      <div class="col-sm-9">
-                          <h4>Shopping</h4>
-                          <p><a href="listings.html" >Cars</a>, <a href="listings.html" >Car Parts</a>, <a href="listings.html" >Campervans</a>, <a href="listings.html">Motobikes</a>, <a href="listings.html" >Scooters</a>, <a href="listings.html" >Vans</a>, <a href="listings.html" >Trucks</a></p>
-                      </div>
-                  </div>
-              </div>
-                <div class="directory-block col-sm-4 col-xs-6">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <i class="fa fa-home"></i>
-                        </div>
-                        <div class="col-sm-9">
-                            <h4>Houses and flats</h4>
-                            <p><a href="listings.html" >Cars</a>, <a href="listings.html" >Car Parts</a>, <a href="listings.html" >Campervans</a>, <a href="listings.html">Motobikes</a>, <a href="listings.html" >Scooters</a>, <a href="listings.html" >Vans</a>, <a href="listings.html" >Trucks</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="directory-block col-sm-4 col-xs-6">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <i class="fa fa-truck"></i>
-                        </div>
-                        <div class="col-sm-9">
-                            <h4>Car and vehicles</h4>
-                            <p><a href="listings.html" >Cars</a>, <a href="listings.html" >Car Parts</a>, <a href="listings.html" >Campervans</a>, <a href="listings.html">Motobikes</a>, <a href="listings.html" >Scooters</a>, <a href="listings.html" >Vans</a>, <a href="listings.html" >Trucks</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="directory-block col-sm-4 col-xs-6">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <i class="fa fa-shopping-cart"></i>
-                        </div>
-                        <div class="col-sm-9">
-                            <h4>Shopping</h4>
-                            <p><a href="listings.html" >Cars</a>, <a href="listings.html" >Car Parts</a>, <a href="listings.html" >Campervans</a>, <a href="listings.html">Motobikes</a>, <a href="listings.html" >Scooters</a>, <a href="listings.html" >Vans</a>, <a href="listings.html" >Trucks</a></p>
-                        </div>
-                    </div>
-                </div>
-                                    <div class="directory-block col-sm-4 col-xs-6">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <i class="fa fa-home"></i>
-                        </div>
-                        <div class="col-sm-9">
-                            <h4>Houses and flats</h4>
-                            <p><a href="listings.html" >Cars</a>, <a href="listings.html" >Car Parts</a>, <a href="listings.html" >Campervans</a>, <a href="listings.html">Motobikes</a>, <a href="listings.html" >Scooters</a>, <a href="listings.html" >Vans</a>, <a href="listings.html" >Trucks</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="directory-block col-sm-4 col-xs-6">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <i class="fa fa-truck"></i>
-                        </div>
-                        <div class="col-sm-9">
-                            <h4>Car and vehicles</h4>
-                            <p><a href="listings.html" >Cars</a>, <a href="listings.html" >Car Parts</a>, <a href="listings.html" >Campervans</a>, <a href="listings.html">Motobikes</a>, <a href="listings.html" >Scooters</a>, <a href="listings.html" >Vans</a>, <a href="listings.html" >Trucks</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="directory-block col-sm-4 col-xs-6">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <i class="fa fa-shopping-cart"></i>
-                        </div>
-                        <div class="col-sm-9">
-                            <h4>Shopping</h4>
-                            <p><a href="listings.html" >Cars</a>, <a href="listings.html" >Car Parts</a>, <a href="listings.html" >Campervans</a>, <a href="listings.html">Motobikes</a>, <a href="listings.html" >Scooters</a>, <a href="listings.html" >Vans</a>, <a href="listings.html" >Trucks</a></p>
-                        </div>
-                    </div>
-                </div>
-              </div>
+            </div>
+        @endforeach
+          </div>
         </div>
     </div>
-    </div>        
+  </div>        
 </div>
 @stop
