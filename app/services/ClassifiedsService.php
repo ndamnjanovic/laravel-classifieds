@@ -5,9 +5,11 @@ class ClassifiedsService {
   public function show($id){
     $classified = Classified::find($id);
     $classifiedCategory = ClassifiedCategory::find($classified->classified_category_id);
+    $classifiedImages = File::allFiles(public_path() . '/uploads/' . $id);
     return View::make('classifieds.index',
                                         array(
                                           'classified' => $classified,
+                                          'images' => $classifiedImages,
                                           'classifiedCategory' => $classifiedCategory
                                     ));
   }
@@ -48,11 +50,12 @@ class ClassifiedsService {
     }
   }
 
-  private function savePhoto($classified){
+  private function savePhotos($classified){
     $photos = Input::file('photo');
     foreach ($photos as $index=>$photo) {
       $destinationPath = public_path() . '/uploads/' . $classified->id;
-      $filename = $classified->title . '-' . $index . '.' . $photo->getClientOriginalExtension();
+      $imageSlugName = Str::slug($classified->title . '-' . $index);
+      $filename =  $imageSlugName . '.' . $photo->getClientOriginalExtension();
       // save first image as lead image
       // the one that will be displayed on listings page
       if($index === 0){
