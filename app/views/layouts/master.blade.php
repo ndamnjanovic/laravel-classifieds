@@ -4,12 +4,12 @@
     @include('partials.head')
   </head>
 
-  <body>            
+  <body>
      @include('partials.header')
-        
+
      @yield('content', 'This is default')
 
-     @include('partials.footer')    
-     @include('partials.foot')    
+     @include('partials.footer')
+     @include('partials.foot')
   </body>
 </html>

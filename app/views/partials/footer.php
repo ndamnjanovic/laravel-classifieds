@@ -6,7 +6,7 @@
       <div class="col-sm-4 col-xs-12">
         <p><strong>&copy; Šabačka čivija 2014</strong></p>
         <p>Sva prava zadržana</p>
-      </div>      
+      </div>
 
       <div class="col-sm-8 col-xs-12">
         <p class="footer-links">

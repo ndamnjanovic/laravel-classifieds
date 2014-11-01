@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Classified extends Eloquent{
 

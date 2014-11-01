@@ -14,7 +14,7 @@ class AlterTableClassifiedsAddForeignKeys extends Migration {
 	{
 		Schema::table('classifieds', function($table){
       $table->unsignedInteger('classified_category_id')->nullable();
-      $table->foreign('classified_category_id')->references('id')->on('classified_categories');      
+      $table->foreign('classified_category_id')->references('id')->on('classified_categories');
     });
 	}
 
@@ -27,7 +27,7 @@ class AlterTableClassifiedsAddForeignKeys extends Migration {
 	{
     Schema::table('classifieds', function($table){
       $table->dropForeign('classifieds_classified_category_id_foreign');
-      $table->dropColumn('classified_category_id');      
+      $table->dropColumn('classified_category_id');
     });
 	}
 

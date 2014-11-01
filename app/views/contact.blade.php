@@ -27,10 +27,10 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Ime i prezime</label>
-                      <input class="form-control" name="name" type="text" value="">             
+                      <input class="form-control" name="name" type="text" value="">
                     </div>
                   </div>
-                 
+
                   <div class="col-lg-6">
                     <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
@@ -50,7 +50,7 @@
                   </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i>Pošalji</button> 
+                <button type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i>Pošalji</button>
               </form>
             </div>
         </div>

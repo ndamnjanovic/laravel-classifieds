@@ -18,9 +18,10 @@ class CreateTableClassifieds extends Migration {
         $table->text('title');
         $table->text('description');
         $table->text('contact_person');
-        $table->text('contact_phone');       
+        $table->text('contact_phone');
+        $table->text('lead_image');
         $table->boolean('is_approved')->default(false);
-        $table->timestamps(); 
+        $table->timestamps();
     });
 	}
 

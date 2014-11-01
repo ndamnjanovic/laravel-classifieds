@@ -18,9 +18,9 @@
           <div class="pull-right">
             <a href="http://www.sabackacivija.com" target="_blank">Šabačka čivija</a>
             <a href="/oglasi-sabac/objavi" class="btn btn-warning post-ad-btn">Postavi oglas</a>
-          </div>  
+          </div>
         </div>
-      </div>  
+      </div>
     </div>
   </div>
 </nav>
