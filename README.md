@@ -3,11 +3,15 @@ laravel-classifieds
 
 Simple classifieds application written in Laravel Framework
 
-#Todo (in next week):
+## Installation
 
+- Clone the repository
+- Install dependencies (from console)
+    - run ```composer install```
+- To set permissions: ```chmod -R 777 app/storage && chmod -R 777 public/uploads```
+- Create database: ```mysqladmin -u root -p password YOUR PASSWORD create NAME_FROM_DATABASE_CONFIG```
+- Run migrations: ```php artisan migrate```
+- Run seeder: ```php artisan db:seed```
 
-- Finish basic functionality (saving classified) and displaying it
-- Improve upload form (use Dropzone.js)
-- Refactor code (extract business logic from controllers)
-- Change routes naming (make it in English)
-- Add localization
+Note:
+css files are missing, but you can get basic layout, by using Twitter Bootstrap 3, which is used in views pages.
