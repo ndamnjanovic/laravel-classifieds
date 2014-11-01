@@ -53,6 +53,13 @@ class ClassifiedsService {
     foreach ($photos as $index=>$photo) {
       $destinationPath = public_path() . '/uploads/' . $classified->id;
       $filename = $classified->title . '-' . $index . '.' . $photo->getClientOriginalExtension();
+      // save first image as lead image
+      // the one that will be displayed on listings page
+      if($index === 0){
+        $classified->lead_image = $filename;
+        $classified->save();
+      }
+
       $upload_success = $photo->move($destinationPath, $filename);
 
       if(!$upload_success){
