@@ -44,7 +44,7 @@
                   </a>
                   <br />
                   <br />
-                  <div class="row" id="gallery">
+                  <div class="row">
                       @foreach ($images as $key => $value)
                         <div class="col-xs-4" style="margin-bottom: 10px;">
                             <a href="{{URL::asset('/uploads/' . $classified->id . '/' . $value->getFilename()) }}" class="fancybox thumbnail" rel="group" >

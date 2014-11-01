@@ -13,6 +13,7 @@
 <link href="{{URL::asset('css/theme.css')}}" rel="stylesheet">
 <link href="{{URL::asset('css/custom.css')}}" rel="stylesheet">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{{URL::asset('fancybox/jquery.fancybox.css')}}" type="text/css" media="screen" />
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
