@@ -12,7 +12,7 @@
         <p class="footer-links">
           <a href="/" class="active">Početna</a>
           <!--  <a href="/uslovi-koriscenja">Uslovi korišćenja</a> -->
-          <a href="/oglasi-sabac/kontakt">Kontakt</a>
+          {{link_to_action('HomeController@showContactForm', 'Kontakt', array(), '')}}
         </p>
       </div>
     </div>

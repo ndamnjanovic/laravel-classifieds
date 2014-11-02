@@ -45,7 +45,7 @@
                   <i class="fa {{$category->class}}"></i>
                 </div>
                 <div class="col-sm-9">
-                  <h4><a href="/oglasi-sabac-kat/{{$category->slug}}"><strong>{{$category->title}}</strong></a></h4>
+                  <h4>{{link_to_action('ClassifiedsController@getByCategory', $category->title, $category->slug, array('class' => 'bold'))}}</h4>
                   <p>{{$category->description}}</p>
                 </div>
               </div>

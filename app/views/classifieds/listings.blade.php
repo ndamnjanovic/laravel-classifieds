@@ -23,11 +23,11 @@
     @foreach($classifieds as $classified)
     <div class="row listing-row">
       <div class="col-sm-2">
-          <a href="/oglasi-sabac/{{$classified->id}}" class="thumbnail " ><img alt="{{$classified->title}}" src="{{$classified->leadImageUrl}}"></a>
+          <a class="thumbnail " ><img alt="{{$classified->title}}" src="{{$classified->leadImageUrl}}"></a>
       </div>
 
       <div class="col-sm-10">
-          <h3><a class=""  href="/oglasi-sabac/{{$classified->id}}"> {{$classified->title}} </a></h3>
+          <h3>{{link_to_action('ClassifiedsController@show', $classified->title, $classified->id, array())}}</h3>
           <p class="muted">Objavljeno {{$classified->created_at}}</p>
           <p>{{Str::words($classified->description, 10)}}</p>
           <p>
@@ -36,7 +36,7 @@
           </p>
           <p>
               <span class="classified_links pull-right">
-                  &nbsp;<a class="link-info underline" href="/oglasi-sabac/{{$classified->id}}">Detalji</a>
+                  &nbsp;{{link_to_action('ClassifiedsController@show', 'Detalji', $classified->id, array('class' => 'link-info underline'))}}
               </span>
           </p>
       </div>

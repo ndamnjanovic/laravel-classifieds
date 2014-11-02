@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-sm-7">
           <ol class="breadcrumb">
-            <li><a href="/oglasi-sabac-kat/{{$classifiedCategory->slug}}" class="link-info"><i class="fa {{$classifiedCategory->class}}"></i> Povratak na  {{$classifiedCategory->title}}</a></li>
+          <li><i class="fa fa-car"></i> {{link_to_action('ClassifiedsController@getByCategory', "Povratak na $classifiedCategory->title", $classifiedCategory->slug, array('class' => 'link-info'))}}
           </ol>
         </div>
       </div>

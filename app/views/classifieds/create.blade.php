@@ -4,7 +4,7 @@
   @if(Session::get('error') != null)
     <div class="bg-danger">
       <p>{{Session::get('error')}}</p>
-      <a class="contact" href="/oglasi-sabac/kontakt">Kontakt</a>
+      {{link_to_action('HomeController@showContactForm', 'Kontakt', array(), array('class' => 'contact'))}}
     </div>
   @endif
 
