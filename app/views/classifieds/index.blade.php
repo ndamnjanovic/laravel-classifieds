@@ -39,8 +39,8 @@
               <div class="row center">
 
                 <div class="col-sm-12">
-                  <a class="fancybox" rel="group" href="{{URL::asset('/uploads/' . $classified->id . '/' . $classified->lead_image) }}">
-                      <img alt="{{$classified->title}}" class="raised" src="{{URL::asset('/uploads/' . $classified->id . '/' . $classified->lead_image) }}" style="width: 100%" />
+                  <a class="fancybox" rel="group" href="{{$classified->leadImageUrl}}">
+                      <img alt="{{$classified->title}}" class="raised" src="{{$classified->leadImageUrl}}" style="width: 100%" />
                   </a>
                   <br />
                   <br />

@@ -11,7 +11,12 @@ class ClassifiedsService {
   public function show($id){
     $classified = Classified::find($id);
     $classifiedCategory = ClassifiedCategory::find($classified->classified_category_id);
-    $classifiedImages = File::allFiles(public_path() . '/uploads/' . $id);
+
+    $classifiedImages = array();
+    if(File::exists(public_path() . '/uploads/' . $id)){
+      $classifiedImages = File::allFiles(public_path() . '/uploads/' . $id);
+    }
+
     return View::make('classifieds.index',
                                         array(
                                           'classified' => $classified,
