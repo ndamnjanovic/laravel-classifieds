@@ -3,6 +3,8 @@ laravel-classifieds
 
 Simple classifieds application written in Laravel Framework
 
+Contributions are welcome!
+
 ## Installation
 
 - Clone the repository

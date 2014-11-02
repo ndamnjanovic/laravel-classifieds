@@ -2,6 +2,12 @@
 
 class ClassifiedsService {
 
+  private $storeValidationRules = array(
+    'title' => 'required',
+    'description' => 'required',
+    'contact_phone' => 'required'
+  );
+
   public function show($id){
     $classified = Classified::find($id);
     $classifiedCategory = ClassifiedCategory::find($classified->classified_category_id);
@@ -36,11 +42,19 @@ class ClassifiedsService {
     $inputData = Input::only('title', 'description', 'phone', 'category', 'contact_person', 'contact_phone', 'classified_category_id');
 
     try{
-      $classified = Classified::create($inputData);
-      if (Input::hasFile('photo')) {
-        $this->savePhotos($classified);
+      $validator = Validator::make($inputData, $this->storeValidationRules);
+
+      if($validator->passes()){
+        $classified = Classified::create($inputData);
+        if (Input::hasFile('photo')) {
+          $this->savePhotos($classified);
+        }
+        return Redirect::to('/')->with('message', 'Vaš oglas je uspešno dodat. Administratori sajta će ga proveriti u najkraćem roku.');
+      } else {
+        return Redirect::to('/oglasi-sabac/objavi')
+                        ->withInput()
+                        ->with('message', $validator->messages());
       }
-      return Redirect::to('/')->with('message', 'Vaš oglas je uspešno dodat. Administratori sajta će ga proveriti u najkraćem roku.');
 
     } catch (Exception $ex) {
       Log::error('Something went wrong while saving classified. ' . $ex);

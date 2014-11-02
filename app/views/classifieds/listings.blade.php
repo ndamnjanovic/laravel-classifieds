@@ -23,7 +23,7 @@
     @foreach($classifieds as $classified)
     <div class="row listing-row">
       <div class="col-sm-2">
-          <a href="/oglasi-sabac/{{$classified->id}}" class="thumbnail " ><img alt="{{$classified->title}}" src="{{URL::asset('/uploads/' . $classified->id . '/' . $classified->lead_image) }}"></a>
+          <a href="/oglasi-sabac/{{$classified->id}}" class="thumbnail " ><img alt="{{$classified->title}}" src="{{$classified->leadImageUrl}}"></a>
       </div>
 
       <div class="col-sm-10">
