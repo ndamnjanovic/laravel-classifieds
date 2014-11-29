@@ -32,7 +32,7 @@
 
         <div class="row directory">
           <div class="col-sm-12 ">
-            <h2><span>Kategorije</span></h2>
+            <h2><span>{{Lang::get('general.categories_label')}}</span></h2>
           </div>
         </div>
 

@@ -20,10 +20,10 @@ class UtilsService {
     });
 
     if(count(Mail::failures()) > 0){
-      Session::flash('error', 'Dogodila se greška prilikom slanja poruke. Molimo Vas da probate ponovo. Hvala na razumevanju.');
+      Session::flash('error', Lang::get('errors.email.send'));
       return Redirect::to('/oglasi-sabac/kontakt')->withInput();
     }else {
-      return Redirect::to('/')->with('message', 'Vaša poruka je uspešno poslata. Javićemo Vam se u najkraćem roku.');
+      return Redirect::to('/')->with('message', Lang::get('general.email.send-success'));
     }
   }
 

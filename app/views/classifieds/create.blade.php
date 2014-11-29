@@ -4,7 +4,7 @@
   @if(Session::get('error') != null)
     <div class="bg-danger">
       <p>{{Session::get('error')}}</p>
-      {{link_to_action('HomeController@showContactForm', 'Kontakt', array(), array('class' => 'contact'))}}
+      {{link_to_action('HomeController@showContactForm', Lang::get('classifieds.general.contact'), array(), array('class' => 'contact'))}}
     </div>
   @endif
 
@@ -14,20 +14,20 @@
       enctype="multipart/form-data">
 
         <div class="panel panel-default">
-          <div class="panel-heading">Izaberite kategoriju oglasa</div>
+          <div class="panel-heading">{{Lang::get('classifieds.create.category_title_box')}}</div>
           <div class="panel-body">
             <div class="row">
               <div class="col-sm-12 "  >
                 <div class="form-group">
                   <div class="row">
                     <div class="col-sm-2" style="margin-top: 10px;">
-                        <label>Kategorija</label>
+                        <label>{{Lang::get('classifieds.create.category')}}</label>
                     </div>
                     <div class="col-sm-6">
                       <select name="classified_category_id" id="category" class="form-control " name="category" required
-                          oninvalid="setCustomValidity('Morate izabrati kategoriju')"
+                          oninvalid="setCustomValidity('{{Lang::get('classifieds.create.category_required')}}')"
                           onchange="try{setCustomValidity('')}catch(e){}">
-                          <option value="">Izaberite kategoriju</option>
+                          <option value="">{{Lang::get('classifieds.create.choose_category')}}</option>
                           @foreach ($categories as $key => $category)
                             <option value="{{$category->id}}">&nbsp;&nbsp;&nbsp;{{$category->title}}</option>
                           @endforeach
@@ -41,20 +41,20 @@
     </div>
 
     <div class="panel panel-default">
-      <div class="panel-heading">Detalji</div>
+      <div class="panel-heading">{{Lang::get('classifieds.create.details_box')}}</div>
       <div class="panel-body">
         <div class="form-group">
           <div class="row">
             <div class="col-sm-12">
-              <label>Naslov </label>
+              <label>{{Lang::get('classifieds.create.title_label')}} </label>
               <input name="title" type="text" class="form-control " required
-              oninvalid="setCustomValidity('Morate uneti naslov')"
+              oninvalid="setCustomValidity('{{Lang::get('classifieds.create.title_required')}}')"
               onchange="try{setCustomValidity('')}catch(e){}">
             </div>
             <div class="col-sm-12"><br />
-              <label>Tekst oglasa </label>
+              <label>{{Lang::get('classifieds.create.desc_label')}}</label>
               <textarea name="description" class="form-control col-sm-8" rows="6" style="width: 99%" required
-              oninvalid="setCustomValidity('Morate uneti tekst oglasa')"
+              oninvalid="setCustomValidity('{{Lang::get('classifieds.create.description_required')}}')"
               onchange="try{setCustomValidity('')}catch(e){}"></textarea>
             </div>
           </div>
@@ -63,21 +63,21 @@
     </div>
 
     <div class="panel panel-default">
-      <div class="panel-heading">Kontakt</div>
+      <div class="panel-heading">{{Lang::get('classifieds.create.contact_box')}}</div>
       <div class="panel-body">
 
         <div class="form-group">
           <div class="row">
             <div class="col-sm-6">
-              <label>Telefon</label>
+              <label>{{Lang::get('classifieds.create.phone_label')}}</label>
               <input name="contact_phone" type="text" class="form-control " required
-              oninvalid="setCustomValidity('Morate uneti kontakt telefon')"
+              oninvalid="setCustomValidity('{{Lang::get('classifieds.create.phone_required')}}')"
               onchange="try{setCustomValidity('')}catch(e){}">
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6"><br />
-              <label>Ime i prezime kontakt osobe</label>
+              <label>{{Lang::get('classifieds.create.contact_person_label')}}</label>
               <input name="contact_person" type="text" class="form-control "  >
             </div>
           </div>
@@ -87,13 +87,13 @@
 
 
     <div class="panel panel-default">
-      <div class="panel-heading">Dodaj slike</div>
+      <div class="panel-heading">{{Lang::get('classifieds.create.add_images_box')}}</div>
       <div class="panel-body">
         <input name="photo[]" id="files" type="file" multiple="true"/>
       </div>
     </div>
 
-    <button type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i>  Objavi oglas</button>
+    <button type="submit" class="btn btn-primary pull-right"><i class="icon-ok"></i>{{Lang::get('classifieds.create.submit_btn')}}</button>
 
     </form>
     </div>

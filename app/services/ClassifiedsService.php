@@ -54,7 +54,7 @@ class ClassifiedsService {
         if (Input::hasFile('photo')) {
           $this->savePhotos($classified);
         }
-        return Redirect::to('/')->with('message', 'Vaš oglas je uspešno dodat. Administratori sajta će ga proveriti u najkraćem roku.');
+        return Redirect::to('/')->with('message', Lang::get('classifieds.save.success'));
       } else {
         return Redirect::to('/oglasi-sabac/objavi')
                         ->withInput()
@@ -65,7 +65,7 @@ class ClassifiedsService {
       Log::error('Something went wrong while saving classified. ' . $ex);
       return Redirect::to('/oglasi-sabac/objavi')
                       ->withInput()
-                      ->with('error', 'Dogodila se greška prilikom pokušaja da se oglas sačuva. Molimo Vas da probate ponovo. Ukoliko problem i dalje postoji, molimo Vas da nas kontaktirate. Hvala na razumevanju.');
+                      ->with('error', Lang::get('classifieds.save.error'));
     }
   }
 
@@ -86,7 +86,7 @@ class ClassifiedsService {
 
       if(!$upload_success){
         Log::error('Something went wrong while saving classified images. ' . $ex);
-        Session::flash('error', 'Dogodila se greška prilikom pokušaja da se sačuvaju slike. Molimo Vas da probate ponovo. Ukoliko problem i dalje postoji, molimo Vas da nas kontaktirate. Hvala na razumevanju.');
+        Session::flash('error', Lang::get('classifieds.save.image-error'));
         return Redirect::to('/oglasi-sabac/objavi')->withInput();
       }
     }

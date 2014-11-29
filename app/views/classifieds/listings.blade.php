@@ -6,7 +6,7 @@
   <div class="row">
       <div class="col-sm-12">
           <ol class="breadcrumb">
-              <li><a href="/">Početna</a></li>
+              <li><a href="/">{{Lang::get('general.home')}}</a></li>
               <li class="active">{{$category->title}}</li>
           </ol>
       </div>
@@ -16,7 +16,7 @@
   <div class="col-sm-12 pull-right listings">
     <div class="row listing-row" style="margin-top: -10px;">
       <div class="pull-left">
-          <strong>Danas, {{date('d M Y')}}</strong>
+          <strong>{{Lang::get('general.today')}}, {{date('d M Y')}}</strong>
       </div>
     </div>
 
@@ -28,15 +28,15 @@
 
       <div class="col-sm-10">
           <h3>{{link_to_action('ClassifiedsController@show', $classified->title, $classified->id, array())}}</h3>
-          <p class="muted">Objavljeno {{$classified->created_at}}</p>
+          <p class="muted">{{Lang::get('classifieds.listings.published_at')}} {{$classified->created_at}}</p>
           <p>{{Str::words($classified->description, 10)}}</p>
           <p>
             <br/>
-            Kontakt: {{$classified->contact_phone}}
+            {{Lang::get('general.contact')}}: {{$classified->contact_phone}}
           </p>
           <p>
               <span class="classified_links pull-right">
-                  &nbsp;{{link_to_action('ClassifiedsController@show', 'Detalji', $classified->id, array('class' => 'link-info underline'))}}
+                  &nbsp;{{link_to_action('ClassifiedsController@show', Lang::get('classifieds.listings.details'), $classified->id, array('class' => 'link-info underline'))}}
               </span>
           </p>
       </div>

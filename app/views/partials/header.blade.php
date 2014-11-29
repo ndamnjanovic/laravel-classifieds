@@ -17,7 +17,7 @@
         <div class="row">
           <div class="pull-right">
             <a href="http://www.sabackacivija.com" target="_blank">Šabačka čivija</a>
-            {{link_to_action('ClassifiedsController@create', 'Postavi oglas', array(), array('class' => 'btn btn-warning post-ad-btn'))}}
+            {{link_to_action('ClassifiedsController@create', Lang::get('general.submit_classified'), array(), array('class' => 'btn btn-warning post-ad-btn'))}}
           </div>
         </div>
       </div>

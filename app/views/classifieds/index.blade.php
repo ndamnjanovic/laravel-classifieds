@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-sm-7">
           <ol class="breadcrumb">
-          <li><i class="fa fa-car"></i> {{link_to_action('ClassifiedsController@getByCategory', "Povratak na $classifiedCategory->title", $classifiedCategory->slug, array('class' => 'link-info'))}}
+          <li><i class="fa fa-car"></i> {{link_to_action('ClassifiedsController@getByCategory', Lang::get('classifieds.single.back_to') . $classifiedCategory->title, $classifiedCategory->slug, array('class' => 'link-info'))}}
           </ol>
         </div>
       </div>
@@ -29,7 +29,7 @@
 
         <div class="row">
             <div class="col-sm-7">
-                <p>Objavljeno {{$classified->created_at}}</p>
+                <p>{{Lang::get('classifieds.single.published_at') . $classified->created_at}}</p>
 
                 <p class="classified-details">
                   {{$classified->description}}
