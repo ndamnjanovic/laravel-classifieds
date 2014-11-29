@@ -71,7 +71,7 @@ class ClassifiedsService {
         $classified->lead_image = $filename;
         $classified->save();
       }
-      
+
       if(!$photo->move($destinationPath, $filename)){
         throw new ImageSavingException();
       }
