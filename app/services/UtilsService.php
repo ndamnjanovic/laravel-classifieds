@@ -19,12 +19,7 @@ class UtilsService {
       $message->to(Config::get('constants'), 'Nedeljko Damnjanovic')->subject('Mali oglasi - kontakt');
     });
 
-    if(count(Mail::failures()) > 0){
-      Session::flash('error', Lang::get('errors.email.send'));
-      return Redirect::to('/oglasi-sabac/kontakt')->withInput();
-    }else {
-      return Redirect::to('/')->with('message', Lang::get('general.email.send-success'));
-    }
+    return (count(Mail::failures()) > 0);
   }
 
 }

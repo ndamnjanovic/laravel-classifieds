@@ -30,6 +30,25 @@ class ClassifiedsController extends BaseController {
   }
 
   public function store() {
-    return $this->classifiedsService->store();
+    try{
+      $result = $this->classifiedsService->store();
+      if($result){
+        Redirect::to('/')->with('message', Lang::get('classifieds.save.success'));
+      } else {
+        Redirect::to('/oglasi-sabac/objavi')
+                        ->withInput()
+                        ->with('message', $validator->messages());
+      }
+
+    }catch(ImageSavingException $ex){
+      Log::error('Something went wrong while saving classified images. ' . $ex);
+      Session::flash('error', Lang::get('classifieds.save.image-error'));
+      return Redirect::to('/oglasi-sabac/objavi')->withInput();
+    }catch (Exception $ex){
+      Log::error('Something went wrong while saving classified. ' . $ex);
+      return Redirect::to('/oglasi-sabac/objavi')
+                      ->withInput()
+                      ->with('error', Lang::get('classifieds.save.error'));
+    }
   }
 }

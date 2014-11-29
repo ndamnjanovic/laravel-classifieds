@@ -46,26 +46,16 @@ class ClassifiedsService {
   public function store(){
     $inputData = Input::only('title', 'description', 'phone', 'category', 'contact_person', 'contact_phone', 'classified_category_id');
 
-    try{
-      $validator = Validator::make($inputData, $this->storeValidationRules);
+    $validator = Validator::make($inputData, $this->storeValidationRules);
 
-      if($validator->passes()){
-        $classified = Classified::create($inputData);
-        if (Input::hasFile('photo')) {
-          $this->savePhotos($classified);
-        }
-        return Redirect::to('/')->with('message', Lang::get('classifieds.save.success'));
-      } else {
-        return Redirect::to('/oglasi-sabac/objavi')
-                        ->withInput()
-                        ->with('message', $validator->messages());
+    if($validator->passes()){
+      $classified = Classified::create($inputData);
+      if (Input::hasFile('photo')) {
+        $this->savePhotos($classified);
       }
-
-    } catch (Exception $ex) {
-      Log::error('Something went wrong while saving classified. ' . $ex);
-      return Redirect::to('/oglasi-sabac/objavi')
-                      ->withInput()
-                      ->with('error', Lang::get('classifieds.save.error'));
+      return true;
+    } else {
+      return false;
     }
   }
 
@@ -81,13 +71,9 @@ class ClassifiedsService {
         $classified->lead_image = $filename;
         $classified->save();
       }
-
-      $upload_success = $photo->move($destinationPath, $filename);
-
-      if(!$upload_success){
-        Log::error('Something went wrong while saving classified images. ' . $ex);
-        Session::flash('error', Lang::get('classifieds.save.image-error'));
-        return Redirect::to('/oglasi-sabac/objavi')->withInput();
+      
+      if(!$photo->move($destinationPath, $filename)){
+        throw new ImageSavingException();
       }
     }
   }
