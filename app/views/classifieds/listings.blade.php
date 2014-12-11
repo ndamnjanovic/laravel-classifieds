@@ -50,7 +50,7 @@
         </ul>
       </div>
     @else 
-      {{Lang::get('classifieds.empty_listing')}}
+      {{Lang::get('classifieds.listing.empty')}}
       {{link_to_action('ClassifiedsController@create', Lang::get('general.submit_classified'), array(), array('class' => 'btn btn-warning post-ad-btn'))}}
     @endif
   </div>
