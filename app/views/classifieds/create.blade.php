@@ -4,7 +4,7 @@
   @if(Session::get('error') != null)
     <div class="bg-danger">
       <p>{{Session::get('error')}}</p>
-      {{link_to_action('HomeController@showContactForm', Lang::get('classifieds.general.contact'), array(), array('class' => 'contact'))}}
+      {{link_to_action('HomeController@showContactForm', Lang::get('general.contact'), array(), array('class' => 'contact'))}}
     </div>
   @endif
 
