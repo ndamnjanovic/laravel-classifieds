@@ -72,7 +72,9 @@ class ClassifiedsService {
         $classified->save();
       }
 
-      if(!$photo->move($destinationPath, $filename)){
+      try{
+        $photo->move($destinationPath, $filename);        
+      }catch(Exception $ex){
         throw new ImageSavingException();
       }
     }
