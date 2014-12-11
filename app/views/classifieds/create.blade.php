@@ -49,13 +49,13 @@
               <label>{{Lang::get('classifieds.create.title_label')}} </label>
               <input name="title" type="text" class="form-control " required
               oninvalid="setCustomValidity('{{Lang::get('classifieds.create.title_required')}}')"
-              onchange="try{setCustomValidity('')}catch(e){}">
+              onchange="try{setCustomValidity('')}catch(e){}" value="{{Input::old('title')}}">
             </div>
             <div class="col-sm-12"><br />
               <label>{{Lang::get('classifieds.create.desc_label')}}</label>
               <textarea name="description" class="form-control col-sm-8" rows="6" style="width: 99%" required
               oninvalid="setCustomValidity('{{Lang::get('classifieds.create.description_required')}}')"
-              onchange="try{setCustomValidity('')}catch(e){}"></textarea>
+              onchange="try{setCustomValidity('')}catch(e){}" value="{{Input::old('description')}}"></textarea>
             </div>
           </div>
         </div>
@@ -72,13 +72,13 @@
               <label>{{Lang::get('classifieds.create.phone_label')}}</label>
               <input name="contact_phone" type="text" class="form-control " required
               oninvalid="setCustomValidity('{{Lang::get('classifieds.create.phone_required')}}')"
-              onchange="try{setCustomValidity('')}catch(e){}">
+              onchange="try{setCustomValidity('')}catch(e){}" value="{{Input::old('contact_phone')}}">
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6"><br />
               <label>{{Lang::get('classifieds.create.contact_person_label')}}</label>
-              <input name="contact_person" type="text" class="form-control "  >
+              <input name="contact_person" type="text" class="form-control " value="{{Input::old('contact_person')}}" >
             </div>
           </div>
         </div>

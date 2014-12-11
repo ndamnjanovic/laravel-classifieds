@@ -34,6 +34,12 @@
                 <p class="classified-details">
                   {{$classified->description}}
                 </p>
+
+                <p class="classified-contact">
+                  <h4>Kontakt</h4>
+                  {{$classified->contact_person}}
+                  {{$classified->contact_phone}}
+                </p>
             </div>
             <div class="col-sm-5 center zoom-gallery">
               <div class="row center">
