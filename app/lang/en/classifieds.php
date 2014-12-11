@@ -24,7 +24,8 @@ return array(
   ),
   'listings' => array(
     'published_at' => 'Published at ',
-    'details' => 'Details'
+    'details' => 'Details',
+    'empty' => 'There are no classifieds for this category.'
   ),
   'save' => array(
     'success' => 'Your classified is saved. Admins will check it asap.',

@@ -24,7 +24,8 @@ return array(
   ),
   'listings' => array(
     'published_at' => 'Objavljeno ',
-    'details' => 'Detalji'
+    'details' => 'Detalji',
+    'empty' => 'Trenutno nema oglasa u ovoj kategoriji.'
   ),
   'save' => array(
     'success' => 'Vaš oglas je uspešno dodat. Administratori sajta će ga proveriti u najkraćem roku.',
