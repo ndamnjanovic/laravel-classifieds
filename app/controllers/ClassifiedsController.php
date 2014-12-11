@@ -33,9 +33,9 @@ class ClassifiedsController extends BaseController {
     try{
       $result = $this->classifiedsService->store();
       if($result){
-        Redirect::to('/')->with('message', Lang::get('classifieds.save.success'));
+        return Redirect::to('/')->with('message', Lang::get('classifieds.save.success'));
       } else {
-        Redirect::to('/oglasi-sabac/objavi')
+        return Redirect::to('/oglasi-sabac/objavi')
                         ->withInput()
                         ->with('message', $validator->messages());
       }
