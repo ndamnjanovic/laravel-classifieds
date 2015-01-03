@@ -23,7 +23,7 @@ class ClassifiedCategoriesSeeder extends DatabaseSeeder{
       array(
         'title' => 'Kućni ljubimci',
         'description' => 'Prodaja, poklanjanje, hrana za ljubimce',
-        'class' => 'fa-phone',
+        'class' => 'fa-paw',
         'slug' => 'kucni-ljubimci'
       )
     );

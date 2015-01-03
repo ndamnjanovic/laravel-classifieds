@@ -30,7 +30,7 @@ class ClassifiedsService {
     $classifieds = Classified::join('classified_categories', 'classified_categories.id', '=', 'classifieds.classified_category_id')
                               ->where('slug', 'like', $slug)
                               ->where('is_approved', 1)
-                              ->paginate(1, array('classifieds.*'));
+                              ->paginate(20, array('classifieds.*'));
 
     return View::make('classifieds.listings',
                                    array('classifieds' => $classifieds,

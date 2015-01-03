@@ -52,7 +52,9 @@
     @else 
     <div class="row listing-row">
       {{Lang::get('classifieds.listings.empty')}}
-      {{link_to_action('ClassifiedsController@create', Lang::get('general.submit_classified'), array(), array('class' => 'btn btn-warning post-ad-btn'))}}
+      <div class="margin-top-20">
+        {{link_to_action('ClassifiedsController@create', Lang::get('general.submit_classified'), array(), array('class' => 'btn btn-warning post-ad-btn'))}}
+      </div>
     </div>
     @endif
   </div>

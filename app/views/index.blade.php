@@ -12,15 +12,6 @@
 
         <p class="main_description">Besplatni mali oglasi iz celog Mačvanskog okruga</p>
 
-      <div class="row">
-        <div class="col-sm-12" style="text-align: center">
-            <div id="quotes">
-              <div class="text-item" style="display: none;">Novo! <strong>Besplatni</strong> mali oglasi! </div>
-              <div class="text-item" style="display: none;"><strong>Prodaj</strong>, <strong>kupi</strong>, <strong>zameni</strong>!</div>
-              <div class="text-item" style="display: none;">Probaj! <strong>Besplatno</strong> je! </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>

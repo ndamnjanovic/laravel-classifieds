@@ -2,6 +2,6 @@
 
   return array(
     'email' => array(
-      'send' => 'Error occurred while trying to send your email. Please try again.'
+      'send' => 'Dogodila se greska prilikom slanja mejla. Molimo Vas pokusajte ponovo.'
      ),
   );

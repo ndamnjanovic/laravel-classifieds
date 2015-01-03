@@ -16,9 +16,8 @@ class UtilsService {
     Mail::send('emails.contact', $data, function($message) use ($data)
     {
       $message->from($data['email_address'], $data['name']);
-      $message->to(Config::get('constants'), 'Nedeljko Damnjanovic')->subject('Mali oglasi - kontakt');
+      $message->to(Config::get('constants.mail'), 'Nedeljko Damnjanovic')->subject('Mali oglasi - kontakt');
     });
-
     return (count(Mail::failures()) > 0);
   }
 
