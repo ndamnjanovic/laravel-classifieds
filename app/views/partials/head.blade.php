@@ -4,7 +4,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Šabačka čivija - mali oglasi grada Šapca</title>
+<title>Šabački oglasi - mali oglasi grada Šapca</title>
 
 <!-- Bootstrap core CSS -->
 <link id="switch_style" href="{{URL::asset('css/bootstrap.css')}}" rel="stylesheet">

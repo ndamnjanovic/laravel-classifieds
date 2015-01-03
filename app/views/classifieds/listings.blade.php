@@ -4,12 +4,13 @@
 
   <br />
   <div class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-8">
           <ol class="breadcrumb">
               <li><a href="/">{{Lang::get('general.home')}}</a></li>
               <li class="active">{{$category->title}}</li>
           </ol>
       </div>
+     <div class="fb-like-box pull-right" data-href="https://www.facebook.com/oglasi.sabac" data-width="100px" data-height="100px" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
   </div>
 
 
@@ -17,7 +18,7 @@
     <div class="row listing-row" style="margin-top: -10px;">
       <div class="pull-left">
           <strong>{{Lang::get('general.today')}}, {{date('d M Y')}}</strong>
-      </div>
+      </div>      
     </div>
 
     @if(count($classifieds) > 0)

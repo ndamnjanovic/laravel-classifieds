@@ -52,7 +52,7 @@
               onchange="try{setCustomValidity('')}catch(e){}" value="{{Input::old('title')}}">
             </div>
             <div class="col-sm-12"><br />
-              <label>{{Lang::get('classifieds.create.desc_label')}}</label>
+              <label>{{Lang::get('classifieds.create.desc_label') . ' (ovde unesite cenu)'}}</label>
               <textarea name="description" class="form-control col-sm-8" rows="6" style="width: 99%" required
               oninvalid="setCustomValidity('{{Lang::get('classifieds.create.description_required')}}')"
               onchange="try{setCustomValidity('')}catch(e){}" value="{{Input::old('description')}}"></textarea>

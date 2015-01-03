@@ -32,7 +32,7 @@
         @foreach($categories as $category)
             <div class="directory-block col-sm-4 col-xs-6">
               <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                   <i class="fa {{$category->class}}"></i>
                 </div>
                 <div class="col-sm-9">
@@ -44,6 +44,9 @@
         @endforeach
           </div>
         </div>
+        
+        <div class="fb-like-box" data-href="https://www.facebook.com/oglasi.sabac" data-width="990px" data-height="200px" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" style="margin-top: 70px"></div>
+        
     </div>
   </div>
 </div>

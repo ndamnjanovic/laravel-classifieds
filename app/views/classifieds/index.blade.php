@@ -8,6 +8,7 @@
           <li><i class="fa fa-car"></i> {{link_to_action('ClassifiedsController@getByCategory', Lang::get('classifieds.single.back_to') . $classifiedCategory->title, $classifiedCategory->slug, array('class' => 'link-info'))}}
           </ol>
         </div>
+         <div class="fb-like-box pull-right" data-href="https://www.facebook.com/oglasi.sabac" data-width="100px" data-height="100px" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
       </div>
 
       <div class="row">
@@ -32,7 +33,7 @@
                 <p>{{Lang::get('classifieds.single.published_at') . $classified->created_at}}</p>
 
                 <p class="classified-details">
-                  {{$classified->description}}
+                  {{nl2br($classified->description)}}
                 </p>
 
                 <p class="classified-contact">
@@ -40,9 +41,10 @@
                   {{$classified->contact_person}}
                   {{$classified->contact_phone}}
                 </p>
-
+                <p>
                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
                 <div class="addthis_native_toolbox"></div>
+                </p>
             </div>
             <div class="col-sm-5 center zoom-gallery">
               <div class="row center">
